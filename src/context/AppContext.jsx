@@ -16,6 +16,18 @@ const [allCourses,setAllCourses] = useState([])
   setAllCourses(dummyCourses)
  }
 
+ // Calculating to rating of course 
+ const calculateRating = (course) => {
+  if(course.courseRatings.length === 0) {
+      return 0
+  }
+  let totalRating = 0
+  course.courseRatings.forEach(rating => {
+    totalRating += rating.rating
+  })
+  return totalRating / course.courseRatings.length
+ }
+
  useEffect(() => {
     fetchAllCourses()
  },[])
@@ -25,7 +37,8 @@ const [allCourses,setAllCourses] = useState([])
     const value = {
      currency,
      allCourses,
-     navigate
+     navigate,
+     calculateRating
     }
 
     return (
