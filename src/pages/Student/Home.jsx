@@ -4,6 +4,7 @@ import Conpanies from '../../components/Student/Conpanies'
 import CoursesSection from '../../components/Student/CoursesSection'
 import TestimonialsSection from '../../components/Student/TestimonialsSection'
 import CallToAction from '../../components/Student/CallToAction'
+import Footer from '../../components/Student/Footer'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <CoursesSection/>
       <TestimonialsSection/>
       <CallToAction/>
+      <Footer/>
     </div>
   )
 }
