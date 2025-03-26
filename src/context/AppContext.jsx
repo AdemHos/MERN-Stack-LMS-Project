@@ -11,6 +11,7 @@ const currency = import.meta.env.VITE_CURRENCY
 const navigate = useNavigate()
 const [allCourses,setAllCourses] = useState([])
 const [isEducator,setIsEducator] = useState(true)
+const [enrolledCourses,setEnrolledCourses] = useState([])
 
 //Fetch All Courses
 
@@ -57,8 +58,14 @@ const [isEducator,setIsEducator] = useState(true)
     return totalLectures;
    }
 
+   // Fetch users enrolled courses
+   const fetchUserEnrolledCourses = async () => {
+      setEnrolledCourses(dummyCourses)
+   }
+
  useEffect(() => {
     fetchAllCourses()
+    fetchUserEnrolledCourses()
  },[])
 
 
@@ -72,7 +79,9 @@ const [isEducator,setIsEducator] = useState(true)
      setIsEducator,
      calculateCourseDuration,
      calculateChapterTime,
-     calculateNoOfLectures
+     calculateNoOfLectures,
+     enrolledCourses,
+     fetchUserEnrolledCourses
     }
 
     return (
