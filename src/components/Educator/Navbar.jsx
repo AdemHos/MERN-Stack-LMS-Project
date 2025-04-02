@@ -1,9 +1,10 @@
 import React from 'react'
+import { dummyEducatorData } from '../../assets/assets'
 
 const Navbar = () => {
   return (
     <div>
-      <h1>Edu Navbar</h1>
+      
     </div>
   )
 }
